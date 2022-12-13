@@ -10,8 +10,7 @@ const Login: FC<Props> = () => {
     const navigate = useNavigate()
 
     const signInWithGoogle = async () => {
-        const res = await signInWithPopup(auth, provider)
-        console.log(res)
+        await signInWithPopup(auth, provider)
         navigate('/')
     }
 

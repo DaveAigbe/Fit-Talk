@@ -27,7 +27,7 @@ const Home: FC<Props> = () => {
 
     useEffect(() => {
         getPosts()
-            .then((res) => {
+            .then(() => {
                 setLoading(false)
             })
             .catch((err) => {
@@ -38,7 +38,7 @@ const Home: FC<Props> = () => {
 
     if (!user) {
         return (
-            <div className={'page'}>
+            <div className={'home-page'}>
                 <h1>Welcome to Fit Talk🏋</h1>
                 <h4>The premier social media platform dedicated to sharing your fitness goals with people around the world!</h4>
                 <p>Please sign in to view posts.</p>
@@ -54,7 +54,7 @@ const Home: FC<Props> = () => {
 
 
     return (
-        <div className={'page'}>
+        <div className={'posts-container'}>
             {posts.map((post) => {
                 return (
                     <Card postObj={post} key={post.description + post.userId}/>

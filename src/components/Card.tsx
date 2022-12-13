@@ -8,10 +8,10 @@ interface Props {
 
 const Card: FunctionComponent<Props> = ({postObj}) => {
     return (
-        <div>
+        <div className={'post'}>
            <h3>{postObj.title}</h3>
-           <img src={postObj.image} alt={'Users image'} width={250} height={250}/>
-            <p>{postObj.username}: {postObj.description}</p>
+           <img className={'post-img'} src={postObj.image} alt={'Users image'}/>
+            <p><span className={'post-username'}>{postObj.username}:</span> {postObj.description}</p>
         </div>
     );
 };
