@@ -1,0 +1,123 @@
+#root {
+  margin: 0;
+  text-align: center;
+}
+
+.navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 8px;
+  background-color: black;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 2px;
+  background-color: black;
+  font-size: 12px;
+}
+
+
+.navigation-items {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+
+}
+
+.logo {
+  position: absolute;
+  left: 8px;
+  font-size: 30px;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.google {
+  color: green;
+}
+
+.sign-in-btn {
+  background-color: green;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.sign-in-btn:hover {
+  background-color: #035703;
+}
+
+.profile-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid limegreen;
+}
+
+.sign-out-btn {
+  color: white;
+  background-color: #242424;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.sign-out-btn:hover {
+  background-color: #151515;
+}
+
+textarea {
+  resize: none;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #535bf2;
+  padding: 100px;
+  border-radius: 8px;
+}
+
+.post-input {
+  width:350px;
+  background-color: #646cff;
+  color: white;
+  border: 1px solid #353ede;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 200ms ease-in-out;
+}
+
+.submit-input {
+  background-color: #353ede;
+  font-weight: bold;
+}
+
+.submit-input:hover {
+  background-color: green;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
