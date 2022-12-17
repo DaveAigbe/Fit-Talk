@@ -1,9 +1,10 @@
 import React, {FC, useEffect, useState} from 'react';
 import {collection, getDocs} from 'firebase/firestore'
-import {auth, db} from "../config/firebase";
-import {IPost} from "../types/interfaces/IPost";
-import Card from "../components/Card";
+import {auth, db} from "../../config/firebase";
+import {IPost} from "../../types/interfaces/IPost";
+import Post from "./Post";
 import {useAuthState} from "react-firebase-hooks/auth";
+import {useNavigate} from "react-router-dom";
 
 interface Props {
 }
@@ -14,15 +15,16 @@ const Home: FC<Props> = () => {
     const [posts, setPosts] = useState<IPost[] | []>([]);
     const [loading, setLoading] = useState(true);
     const [user] = useAuthState(auth)
+    const navigate = useNavigate()
+
     const getPosts = async () => {
         const querySnapshot = await getDocs(postsRef)
 
-        let allPosts: any[] = []
-        querySnapshot.forEach((doc) => {
-            allPosts.push(doc.data())
-        })
+        setPosts(querySnapshot.docs.map((doc) => ({...doc.data(), id: doc.id})) as IPost[])
+    }
 
-        setPosts(allPosts)
+    const routeToLogin = () => {
+        navigate('/login')
     }
 
     useEffect(() => {
@@ -39,9 +41,12 @@ const Home: FC<Props> = () => {
     if (!user) {
         return (
             <div className={'home-page'}>
-                <h1>Welcome to Fit Talk🏋</h1>
-                <h4>The premier social media platform dedicated to sharing your fitness goals with people around the world!</h4>
-                <p>Please sign in to view posts.</p>
+                <div className={'introduction'}>
+                    <h1>Welcome to Fit Talk🏋</h1>
+                    <h2>The premier social media platform dedicated to sharing your fitness goals with people around the
+                        world!</h2>
+                    <h3 onClick={routeToLogin}>Sign in to view posts.</h3>
+                </div>
             </div>
         )
     } else if (loading) {
@@ -57,7 +62,7 @@ const Home: FC<Props> = () => {
         <div className={'posts-container'}>
             {posts.map((post) => {
                 return (
-                    <Card postObj={post} key={post.description + post.userId}/>
+                    <Post postObj={post} key={post.id}/>
                 )
             })}
         </div>

@@ -52,7 +52,7 @@ export const CreatePostForm: FunctionComponent<Props> = () => {
                 <input className={'post-input'} type="url" id={'image'} placeholder={'Image URL...'} {...register('image')}/>
                 <p style={{color: 'red'}}>{errors.image?.message}</p>
             </div>
-            <input className={'post-input submit-input'} type={'submit'} placeholder={'Post'}/>
+            <input className={'post-input submit-input'} type={'submit'} value={'Submit Post'}/>
         </form>
     )
 }

@@ -1,7 +1,10 @@
-#root {
-  margin: 20px;
+*{
   text-align: center;
-
+}
+.app {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .navigation {
@@ -43,18 +46,50 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  width: 100vw;
+  height: 95vh;
 }
 
 .home-page {
   background-image: url('https://www.animatedimages.org/data/media/1652/animated-weightlifting-image-0002.gif');
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100vw;
+  height: 95vh;
 }
+
+.introduction {
+  background-color: #242424;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: #646cff 0 0 10px 10px;
+}
+
+.home-page h1 {
+  font-size: 80px;
+  margin: 0;
+}
+
+.home-page h2 {
+  color: #646cff;
+  font-size: 30px;
+}
+
+.home-page h3 {
+  font-size: 25px;
+  color: green;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all 200ms ease-in-out;
+}
+
+.home-page h3:hover {
+  color: #035703;
+}
+
+
 
 .google {
   color: green;
@@ -136,6 +171,7 @@ label {
 .posts-container {
   display: flex;
   gap: 20px;
+  margin-top: 75px;
 }
 
 .post {
@@ -143,6 +179,7 @@ label {
   flex-direction: column;
   height: 300px;
   width: 300px;
+
 }
 
 .post-img {
@@ -155,4 +192,3 @@ label {
   font-weight: bold;
 
 }
-
